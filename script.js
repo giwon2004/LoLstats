@@ -1,6 +1,6 @@
 window.onload = function(){
 
-function read_file(num) {
+async function read_file(num) {
 	const response = await fetch("https://giwon2004.github.io/LoLstats/data/${num}.json");
 	if (response.status === 200)
 		return response.json;
@@ -70,5 +70,6 @@ function make_list(data) {
 }
 
 var names = [];
-console.log(read_data());
+var battle_history = await read_data();
+console.log(battle_history);
 }
