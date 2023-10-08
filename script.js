@@ -3,7 +3,13 @@ function read_files(dirname, process) {
 	var count = 1;
 	while (true) {
 		try {
-			fetch("https://giwon2004.github.io/LoLstats/" + count + ".json")
+			var url = "https://giwon2004.github.io/LoLstats/data/" + count + ".json";
+			var http = new XMLHttpRequest();
+			http.open('HEAD', url, false);
+			http.send();
+			if (http.status == 404) break;
+			
+			fetch(url)
 			.then(response => response.json())
 			.then(data => process(data));
 			count++;
