@@ -17,20 +17,32 @@ function read_files(dirname, process) {
 function player_statistics(name){
 	var win = 0;
 	var lose = 0;
+	var team = {};
 	var position = {"top": 0, "jgl": 0, "mid": 0, "bot": 0, "sup": 0};
+	var champion = {};
 	read_files('data/', (content) => {
-		if (name in content["teamA"]) {
-			if (content["teamA"]["status"] == "WIN") win++;
-			else lose++;
-			position[content["teamA"][name]["position"]]++;
+		if (name in content["teamA"])
+			team = content["teamA"];
+		else if (name in content["teamB"])
+			team = content["teamA"];
+		else
+			return;
+		player = team[name];
+		if (!(player["champion"] in champion)) {
+			champion[player["champion"]] = {"win": 0, "lose": 0};
 		}
-		else if (name in content["teamB"]) {
-			if (content["teamB"]["status"] == "WIN") win++;
-			else lose++;
-			position[content["teamA"][name]["position"]]++;
+		if (team["status"] == "WIN") {
+			win++;
+			champion[player["champion"]]["win"]++;
 		}
+		else {
+			lose++;
+			champion[player["champion"]]["lose"]++;
+		}
+		position[player["position"]]++;
+
 	});
-	return {"win": win, "lose": lose, "total": win + lose, "position": position};
+	return {"win": win, "lose": lose, "total": win + lose, "position": position, "champion": champion};
 }
 
 function make_list(data) {
@@ -38,7 +50,7 @@ function make_list(data) {
 	for (name in Object.keys(data)) {
 		console.log(name);
 		pstat = player_statistics(name);
-		html += "\n\t<li>" + name + ":" + pstat[win] + "</li>"
+		html += "\n\t<li>" + name + ":" + pstat["win"] + "</li>"
 	}
 	html += "\n</ul>";
 	return html
