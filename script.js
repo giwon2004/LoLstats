@@ -34,6 +34,7 @@ var names = [];
 fetch("https://giwon2004.github.io/LoLstats/player_info.json")
 .then(response => response.json())
 .then(data => names.push(Object.keys(data)));
+console.log(names);
 
 html = "<ul>"
 for (name in names) {
