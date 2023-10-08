@@ -31,7 +31,7 @@ function player_statistics(name){
 }
 
 var names = [];
-fetch("https://github.com/giwon2004/LoLstats/blob/main/player_info.json")
+fetch("https://giwon2004.github.io/LoLstats/player_info.json")
 .then(response => response.json())
 .then(data => console.log(Object.keys(data)));
 
