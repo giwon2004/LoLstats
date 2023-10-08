@@ -6,6 +6,7 @@ function read_files(dirname, process) {
 			fetch("https://giwon2004.github.io/LoLstats/" + count + ".json")
 			.then(response => response.json())
 			.then(data => process(data));
+			count++;
 		}
 		catch {
 			break;
