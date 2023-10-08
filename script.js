@@ -30,20 +30,19 @@ function player_statistics(name){
 	return {"win": win, "lose": lose, "total": win + lose, "position": position};
 }
 
+function make_list(data) {
+	var html = "<ul>"
+	for (name in Object.keys(data)) {
+		console.log(name);
+		pstat = player_statistics(name);
+		html += "\n\t<li>" + name + ":" + pstat[win] + "</li>"
+	}
+	html += "\n</ul>";
+	return html
+}
+
 var names = [];
 fetch("https://giwon2004.github.io/LoLstats/player_info.json")
 .then(response => response.json())
-.then(data => names.push(Object.keys(data)));
-console.log(names);
-
-html = "<ul>"
-for (name in names) {
-	console.log(name);
-	pstat = player_statistics(name);
-	html += "\n<li>" + name + ":" + pstat[win] + "</li>"
-}
-html += "\n</ul>"
-console.log(html);
-
-document.getElementById("main").innerHTML = html;
+.then(data => document.getElementById("main").innerHTML = make_list(data));
 }
