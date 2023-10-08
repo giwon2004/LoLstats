@@ -33,7 +33,14 @@ function player_statistics(name){
 var names = [];
 fetch("https://giwon2004.github.io/LoLstats/player_info.json")
 .then(response => response.json())
-.then(data => console.log(Object.keys(data)));
+.then(data => names = Object.keys(data));
 
-document.getElementById("main").innerHTML = names;
+html = "<ul>"
+for (name in names) {
+	pstat = player_statistics(name);
+	html += "\n<li>" + name + ":" + pstat[win] + "</li>"
+}
+html += "\n</ul>"
+
+document.getElementById("main").innerHTML = html;
 }
