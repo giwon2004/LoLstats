@@ -1,3 +1,4 @@
+window.onload = function(){
 function read_files(dirname, process) {
 	fs.readdir(dirname, function(err, filenames) {
 		if (err) return;
@@ -29,11 +30,10 @@ function player_statistics(name){
 	return {"win": win, "lose": lose, "total": win + lose, "position": position};
 }
 
-
 var names = [];
-fetch('player_info.json').then(
-	(res) => res.text()
-).then(
-	(filecontents) => console.log(filecontents)
-);
+fetch("player_info.json")
+.then(response => response.json())
+.then(data => names = Object.keys(data));
+
 document.getElementById("main").innerHTML = names;
+}
