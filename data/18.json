@@ -1,0 +1,50 @@
+{
+	"date": "202310090318",
+	"length": "27:23",
+	"teamA": {
+		"status": "WIN",
+		"류형탁": {
+			"position": "jgl",
+			"champion": "마스터 이"
+		},
+		"장하늘": {
+			"position": "top",
+			"champion": "요네"
+		},
+		"박시은": {
+			"position": "sup",
+			"champion": "유미"
+		},
+		"권우진": {
+			"position": "mid",
+			"champion": "야스오"
+		},
+		"송기원": {
+			"position": "bot",
+			"champion": "제리"
+		},
+	},
+	"teamB": {
+		"status": "LOSE",
+		"양준서": {
+			"position": "top",
+			"champion": "말파이트"
+		},
+		"이상화": {
+			"position": "sup",
+			"champion": "쓰레쉬"
+		},
+		"김선준": {
+			"position": "jgl",
+			"champion": "비에고"
+		},
+		"김주영": {
+			"position": "bot",
+			"champion": "애쉬"
+		},
+		"최선호": {
+			"position": "mid",
+			"champion": "신드라"
+		},
+	}
+}

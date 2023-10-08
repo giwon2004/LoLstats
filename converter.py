@@ -1,4 +1,5 @@
 from re import sub
+import os
 tab = '\t'
 rb = '{'
 lb = '}'
@@ -30,8 +31,13 @@ for row in range(15):
     elif 10 <= row <= 14:
         teamB.append(raw.split(': '))
 
-with open(f"data/{date}.json", "w") as f:
+nth = 1
+while os.path.exists(f"data/{nth}.json"):
+    nth += 1
+
+with open(f"data/{nth}.json", "w") as f:
     f.write(f'''{rb}
+{tab}"date": "{date}",
 {tab}"length": "{duration}",
 {tab}"teamA": {rb}
 {make_team_json(stateA, teamA)}

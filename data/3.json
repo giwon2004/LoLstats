@@ -1,5 +1,6 @@
 {
-	"length": "27:30",
+	"date": "202309051744",
+	"length": "18:20",
 	"teamA": {
 		"status": "WIN",
 		"류형탁": {
@@ -8,15 +9,15 @@
 		},
 		"송기원": {
 			"position": "bot",
-			"champion": "제리"
+			"champion": "미스 포츈"
 		},
 		"양준서": {
 			"position": "top",
-			"champion": "잭스"
+			"champion": "말파이트"
 		},
 		"박시은": {
 			"position": "sup",
-			"champion": "유미"
+			"champion": "쓰레쉬"
 		},
 		"장하늘": {
 			"position": "mid",
@@ -31,19 +32,19 @@
 		},
 		"이상화": {
 			"position": "top",
-			"champion": "사일러스"
+			"champion": "제리"
 		},
 		"정은비": {
 			"position": "sup",
-			"champion": "럭스"
+			"champion": "유미"
 		},
 		"최선호": {
 			"position": "jgl",
-			"champion": "리 신"
+			"champion": "사일러스"
 		},
 		"정유찬": {
 			"position": "mid",
-			"champion": "카시오페아"
+			"champion": "베이가"
 		},
 	}
 }

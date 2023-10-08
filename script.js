@@ -1,21 +1,23 @@
 window.onload = function(){
 function read_files(dirname, process) {
-	fs.readdir(dirname, function(err, filenames) {
-		if (err) return;
-		filenames.forEach(function(filename) {
-			fs.readFile(dirname + filename, 'utf-8', function(err, content) {
-				if (err) return;
-				process(filename, content);
-			});
-		});
-	});
+	var count = 1;
+	while (true) {
+		try {
+			fetch("https://giwon2004.github.io/LoLstats/" + count + ".json")
+			.then(response => response.json())
+			.then(data => process(data));
+		}
+		catch {
+			break;
+		}
+	}
 }
 
 function player_statistics(name){
 	var win = 0;
 	var lose = 0;
 	var position = {"top": 0, "jgl": 0, "mid": 0, "bot": 0, "sup": 0};
-	read_files('data/', (filename, content) => {
+	read_files('data/', (content) => {
 		if (name in content["teamA"]) {
 			if (content["teamA"]["status"] == "WIN") win++;
 			else lose++;

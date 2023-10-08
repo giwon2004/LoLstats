@@ -1,0 +1,50 @@
+{
+	"date": "202310090149",
+	"length": "26:19",
+	"teamA": {
+		"status": "WIN",
+		"최선호": {
+			"position": "mid",
+			"champion": "아지르"
+		},
+		"류형탁": {
+			"position": "jgl",
+			"champion": "그레이브즈"
+		},
+		"박시은": {
+			"position": "sup",
+			"champion": "럭스"
+		},
+		"권우진": {
+			"position": "top",
+			"champion": "다리우스"
+		},
+		"송기원": {
+			"position": "bot",
+			"champion": "케이틀린"
+		},
+	},
+	"teamB": {
+		"status": "LOSE",
+		"양준서": {
+			"position": "top",
+			"champion": "럼블"
+		},
+		"이상화": {
+			"position": "jgl",
+			"champion": "카직스"
+		},
+		"김선준": {
+			"position": "bot",
+			"champion": "베인"
+		},
+		"정은비": {
+			"position": "sup",
+			"champion": "레오나"
+		},
+		"장하늘": {
+			"position": "mid",
+			"champion": "니코"
+		},
+	}
+}
