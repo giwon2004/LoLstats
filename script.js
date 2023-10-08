@@ -33,10 +33,11 @@ function player_statistics(name){
 var names = [];
 fetch("https://giwon2004.github.io/LoLstats/player_info.json")
 .then(response => response.json())
-.then(data => names = Object.keys(data));
+.then(data => names.push(Object.keys(data)));
 
 html = "<ul>"
 for (name in names) {
+	console.log(name);
 	pstat = player_statistics(name);
 	html += "\n<li>" + name + ":" + pstat[win] + "</li>"
 }
