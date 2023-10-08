@@ -41,6 +41,7 @@ for (name in names) {
 	html += "\n<li>" + name + ":" + pstat[win] + "</li>"
 }
 html += "\n</ul>"
+console.log(html);
 
 document.getElementById("main").innerHTML = html;
 }
