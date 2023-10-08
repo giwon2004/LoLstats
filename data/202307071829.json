@@ -1,0 +1,49 @@
+{
+	"length": "37:20",
+	"teamA": {
+		"status": "LOSE",
+		"류형탁": {
+			"position": "jgl",
+			"champion": "비에고"
+		},
+		"송기원": {
+			"position": "mid",
+			"champion": "조이"
+		},
+		"양준서": {
+			"position": "top",
+			"champion": "말파이트"
+		},
+		"정유찬": {
+			"position": "bot",
+			"champion": "바루스"
+		},
+		"정은비": {
+			"position": "sup",
+			"champion": "럭스"
+		},
+	},
+	"teamB": {
+		"status": "WIN",
+		"박시은": {
+			"position": "sup",
+			"champion": "유미"
+		},
+		"이상화": {
+			"position": "jgl",
+			"champion": "탈론"
+		},
+		"장하늘": {
+			"position": "mid",
+			"champion": "럭스"
+		},
+		"최선호": {
+			"position": "top",
+			"champion": "크산테"
+		},
+		"최용호": {
+			"position": "bot",
+			"champion": "미스 포츈"
+		},
+	}
+}

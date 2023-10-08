@@ -1,0 +1,49 @@
+{
+	"length": "29:17",
+	"teamA": {
+		"status": "WIN",
+		"최선호": {
+			"position": "mid",
+			"champion": "라이즈"
+		},
+		"류형탁": {
+			"position": "jgl",
+			"champion": "그레이브즈"
+		},
+		"김주영": {
+			"position": "bot",
+			"champion": "애쉬"
+		},
+		"권우진": {
+			"position": "top",
+			"champion": "레넥톤"
+		},
+		"정유찬": {
+			"position": "sup",
+			"champion": "레나타 글라스크"
+		},
+	},
+	"teamB": {
+		"status": "LOSE",
+		"석인호": {
+			"position": "mid",
+			"champion": "판테온(용병)"
+		},
+		"이상화": {
+			"position": "jgl",
+			"champion": "리 신"
+		},
+		"김민준": {
+			"position": "top",
+			"champion": "요네"
+		},
+		"송기원": {
+			"position": "bot",
+			"champion": "제리"
+		},
+		"박시은": {
+			"position": "sup",
+			"champion": "세라핀"
+		},
+	}
+}

@@ -1,0 +1,49 @@
+{
+	"length": "28:35",
+	"teamA": {
+		"status": "LOSE",
+		"이준구": {
+			"position": "top",
+			"champion": "가렌"
+		},
+		"정유찬": {
+			"position": "mid",
+			"champion": "카시오페아"
+		},
+		"김선준": {
+			"position": "jgl",
+			"champion": "비에고"
+		},
+		"송기원": {
+			"position": "bot",
+			"champion": "제리"
+		},
+		"정은비": {
+			"position": "sup",
+			"champion": "유미"
+		},
+	},
+	"teamB": {
+		"status": "WIN",
+		"최선호": {
+			"position": "bot",
+			"champion": "자야"
+		},
+		"장하늘": {
+			"position": "mid",
+			"champion": "아리"
+		},
+		"이상화": {
+			"position": "jgl",
+			"champion": "카직스"
+		},
+		"박시은": {
+			"position": "sup",
+			"champion": "유미"
+		},
+		"양준서": {
+			"position": "top",
+			"champion": "말파이트"
+		},
+	}
+}

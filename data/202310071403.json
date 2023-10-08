@@ -1,0 +1,49 @@
+{
+	"length": "42:13",
+	"teamA": {
+		"status": "WIN",
+		"류형탁": {
+			"position": "jgl",
+			"champion": "자르반 4세"
+		},
+		"이상화": {
+			"position": "top",
+			"champion": "럼블"
+		},
+		"장하늘": {
+			"position": "mid",
+			"champion": "아리"
+		},
+		"송기원": {
+			"position": "bot",
+			"champion": "제리"
+		},
+		"최선호": {
+			"position": "sup",
+			"champion": "카르마"
+		},
+	},
+	"teamB": {
+		"status": "LOSE",
+		"양준서": {
+			"position": "top",
+			"champion": "잭스"
+		},
+		"김선준": {
+			"position": "sup",
+			"champion": "쓰레쉬"
+		},
+		"김예운": {
+			"position": "bot",
+			"champion": "루시안"
+		},
+		"권우진": {
+			"position": "jgl",
+			"champion": "자크"
+		},
+		"최수현": {
+			"position": "mid",
+			"champion": "신드라"
+		},
+	}
+}
