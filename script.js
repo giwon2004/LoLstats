@@ -33,7 +33,7 @@ function player_statistics(name){
 var names = [];
 fetch("player_info.json")
 .then(response => response.json())
-.then(data => names = Object.keys(data));
+.then(data => console.log(Object.keys(data)));
 
 document.getElementById("main").innerHTML = names;
 }
