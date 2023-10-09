@@ -22,8 +22,6 @@ function read_data() {
 	var data = {};
 	while (true) {
 		data = read_file(num);
-		console.log(data);
-		console.log(res);
 		if(data !== null)
 			res[num] = data;
 		else
@@ -40,6 +38,7 @@ function player_statistics(name, data){
 	var position = {"top": 0, "jgl": 0, "mid": 0, "bot": 0, "sup": 0};
 	var champion = {};
 	for (var i = 1; i <= data.total; i++) {
+		console.log(data);
 		content = data.res[i];
 		if (name in content.teamA)
 			team = content.teamA;
@@ -80,7 +79,6 @@ function get_player_list() {
 
 function make_list(data) {
 	var html = "<ul>";
-	console.log(data);
 
 	for (let name in get_player_list()) {
 		console.log(name);
