@@ -38,8 +38,7 @@ function player_statistics(name, data){
 	var position = {"top": 0, "jgl": 0, "mid": 0, "bot": 0, "sup": 0};
 	var champion = {};
 	for (var i = 1; i <= data.total; i++) {
-		console.log(data);
-		content = data.res[i];
+		content = data.data[i];
 		if (name in content.teamA)
 			team = content.teamA;
 		else if (name in content.teamB)
