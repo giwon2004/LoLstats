@@ -6,14 +6,12 @@ function read_file(num) {
 
 	const xhr = new XMLHttpRequest();
 	xhr.open('GET', url, false); // Use synchronous request
-	try {
-		xhr.send();
-		if (xhr.status === 200) {
-			const jsonData = JSON.parse(xhr.responseText);
-		}
+	xhr.send();
+	if (xhr.status === 200) {
+		const jsonData = JSON.parse(xhr.responseText);
 		return jsonData;
 	}
-	catch {
+	else {
 		return null; 
 	}
 }
@@ -24,13 +22,13 @@ function read_data() {
 	var data = {};
 	while (true) {
 		data = read_file(num);
+		console.log(data);
+		console.log(res);
 		if(data !== null)
 			res[num] = data;
 		else
 			break;
 		num++;
-		console.log(data);
-		console.log(res);
 	}
 	return {"data": res, "total": num-1};
 }
