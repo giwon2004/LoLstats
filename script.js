@@ -1,10 +1,5 @@
 window.onload = function(){
 
-function fixJsonString(str) {
-	const fixedStr = str.replace(/'/g, '"').replace(/(\w+):/g, '"$1":');
-	return JSON.parse(fixedStr);
-}
-
 function read_file(num) {
 	const baseURL = 'https://giwon2004.github.io/LoLstats/data/';
 	const url = `${baseURL}${num}.json`;
@@ -15,7 +10,7 @@ function read_file(num) {
 
 	if (xhr.status === 200) {
 		console.log(xhr.responseText);
-		const jsonData = fixJsonString(xhr.responseText);
+		const jsonData = JSON.parse(xhr.responseText);
 		return jsonData;
 	} else {
 		console.error(`Error fetching ${num}.json: ${xhr.status} ${xhr.statusText}`);
