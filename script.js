@@ -73,7 +73,6 @@ function get_player_list() {
 
 function make_list(data) {
 	var html = "<ul>";
-	console.log(playerList);
 	console.log(data);
 
 	for (let name in get_player_list()) {
