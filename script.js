@@ -65,8 +65,17 @@ function player_statistics(name, data){
 }
 
 function get_player_list() {
-	const response = fetch("https://giwon2004.github.io/LoLstats/player_info.json");
-	return response.json;
+	const url = 'https://giwon2004.github.io/LoLstats/player_info.json';
+	const xhr = new XMLHttpRequest();
+	xhr.open('GET', url, false); // Use synchronous request
+	xhr.send();
+	if (xhr.status === 200) {
+		const jsonData = JSON.parse(xhr.responseText);
+		return jsonData;
+	}
+	else {
+		return null; 
+	}
 }
 
 function make_list(data) {
