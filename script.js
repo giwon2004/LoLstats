@@ -101,4 +101,5 @@ var names = [];
 data = read_data();
 console.log(get_player_list());
 console.log(data);
+console.log(make_list(data));
 }
