@@ -29,6 +29,8 @@ function read_data() {
 		else
 			break;
 		num++;
+		console.log(data);
+		console.log(res);
 	}
 	return {"data": res, "total": num-1};
 }
@@ -97,14 +99,11 @@ function make_list(data) {
 	return html;
 }
 
-var names = [];
-data = read_data();
-console.log(data);
-console.log(make_list(data));
-
 function updatePlayerDisplay() {
     const playerDisplay = document.getElementById("player_display");
     const html = make_list(read_data());
     playerDisplay.innerHTML = html;
 }
+
+updatePlayerDisplay();
 }
