@@ -74,7 +74,7 @@ function get_player_list() {
 function make_list(data) {
 	var html = "<ul>";
 	var playerList = get_player_list();
-	console.log(get_player_list);
+	console.log(playerList);
 
 	for (let name in playerList) {
 		pstat = player_statistics(name, data);
