@@ -9,7 +9,6 @@ function read_file(num) {
 	xhr.send();
 
 	if (xhr.status === 200) {
-		console.log(xhr.responseText);
 		const jsonData = JSON.parse(xhr.responseText);
 		return jsonData;
 	} else {
@@ -24,7 +23,6 @@ function read_data() {
 	var data = {};
 	while (true) {
 		data = read_file(num);
-		console.log(data);
 		if(data !== null)
 			res[num] = data;
 		else
@@ -67,7 +65,7 @@ function player_statistics(name, data){
 
 function get_player_list() {
 	const response = fetch("https://giwon2004.github.io/LoLstats/player_info.json");
-	return response.json();
+	return response.json;
 }
 
 function make_list(data) {
@@ -99,7 +97,12 @@ function make_list(data) {
 
 var names = [];
 data = read_data();
-console.log(get_player_list());
 console.log(data);
 console.log(make_list(data));
+
+function updatePlayerDisplay() {
+    const playerDisplay = document.getElementById("player_display");
+    const html = make_list(read_data());
+    playerDisplay.innerHTML = html;
+}
 }
