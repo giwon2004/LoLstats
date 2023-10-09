@@ -1,12 +1,22 @@
 window.onload = function(){
 
 function read_file(num) {
-	fetch("https://giwon2004.github.io/LoLstats/data/" + num + ".json")
-	.then(response => console.log(response));
-// 	if (response.status === 200)
-// 		return response.json;
-// 	else
-// 		return false;
+	const baseURL = 'https://username.github.io/LoLstats/data/';
+	const url = `${baseURL}${num}.json`;
+
+	const xhr = new XMLHttpRequest();
+	xhr.open('GET', url, false); // Use synchronous request
+	xhr.send();
+
+	if (xhr.status === 200) {
+		const jsonData = JSON.parse(xhr.responseText);
+		// Process jsonData here
+		console.log(`Fetched and processed ${num}.json`);
+		return jsonData;
+	} else {
+		console.error(`Error fetching ${num}.json: ${xhr.status} ${xhr.statusText}`);
+		return null; // Return null to indicate an error
+	}
 }
 
 function read_data() {
@@ -16,13 +26,13 @@ function read_data() {
 	while (true) {
 		data = read_file(num);
 		console.log(data);
-		if(data)
+		if(data !== null)
 			res[num] = data;
 		else
 			break;
 		num++;
 	}
-	return {"data": res, "total": num};
+	return {"data": res, "total": num-1};
 }
 
 function player_statistics(name, data){
