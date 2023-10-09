@@ -83,6 +83,7 @@ function make_list(data) {
 	console.log(data);
 
 	for (let name in get_player_list()) {
+		console.log(name);
 		pstat = player_statistics(name, data);
 
 		// Calculate winning probability as a percentage
