@@ -9,16 +9,17 @@ function read_file(num) {
 }
 
 function read_data() {
-	var num = 0;
+	var num = 1;
 	var res = {};
 	var data = {};
 	while (true) {
-		num++;
 		data = read_file(num);
+		console.log(data);
 		if(data)
 			res[num] = data;
 		else
 			break;
+		num++;
 	}
 	return {"data": res, "total": num};
 }
