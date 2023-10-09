@@ -1,7 +1,7 @@
 window.onload = function(){
 
 function read_file(num) {
-	const response = fetch("https://giwon2004.github.io/LoLstats/data/" + num + ".json");
+	const response = fetch("data/" + num + ".json");
 	console.log(response);
 	if (response.status === 200)
 		return response.json;
@@ -73,5 +73,6 @@ function make_list(data) {
 
 var names = [];
 data = read_data();
+console.log(get_player_list());
 console.log(data);
 }
