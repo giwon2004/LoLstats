@@ -1,12 +1,12 @@
 window.onload = function(){
 
 function read_file(num) {
-	const response = fetch("data/" + num + ".json");
-	console.log(response);
-	if (response.status === 200)
-		return response.json;
-	else
-		return false;
+	fetch("https://giwon2004.github.io/LoLstats/data/" + num + ".json")
+	.then(response => console.log(response));
+// 	if (response.status === 200)
+// 		return response.json;
+// 	else
+// 		return false;
 }
 
 function read_data() {
