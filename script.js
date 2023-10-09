@@ -61,7 +61,7 @@ function get_player_list() {
 
 function make_list(data) {
 	var html = "<ul>"
-	for (name in Object.keys(get_player_list)) {
+	for (let name of get_player_list()) {
 		pstat = player_statistics(name, data);
 		html += "\n\t<li>" + name + ":" + pstat["win"] + "</li>"
 	}
@@ -71,5 +71,5 @@ function make_list(data) {
 
 var names = [];
 data = read_data();
-console.log(make_list(data));
+console.log(data);
 }
