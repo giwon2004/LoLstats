@@ -22,7 +22,7 @@
 		"정은비": {
 			"position": "sup",
 			"champion": "유미"
-		},
+		}
 	},
 	"teamB": {
 		"status": "WIN",
@@ -45,6 +45,6 @@
 		"양준서": {
 			"position": "top",
 			"champion": "말파이트"
-		},
+		}
 	}
 }

@@ -22,7 +22,7 @@
 		"정유찬": {
 			"position": "sup",
 			"champion": "레나타 글라스크"
-		},
+		}
 	},
 	"teamB": {
 		"status": "LOSE",
@@ -45,6 +45,6 @@
 		"박시은": {
 			"position": "sup",
 			"champion": "유미"
-		},
+		}
 	}
 }

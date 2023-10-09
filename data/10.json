@@ -22,7 +22,7 @@
 		"최선호": {
 			"position": "sup",
 			"champion": "카르마"
-		},
+		}
 	},
 	"teamB": {
 		"status": "LOSE",
@@ -45,6 +45,6 @@
 		"최수현": {
 			"position": "mid",
 			"champion": "신드라"
-		},
+		}
 	}
 }

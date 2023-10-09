@@ -22,7 +22,7 @@
 		"송기원": {
 			"position": "mid",
 			"champion": "피즈"
-		},
+		}
 	},
 	"teamB": {
 		"status": "WIN",
@@ -45,6 +45,6 @@
 		"최선호": {
 			"position": "mid",
 			"champion": "사일러스"
-		},
+		}
 	}
 }

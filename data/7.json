@@ -22,7 +22,7 @@
 		"박시은": {
 			"position": "sup",
 			"champion": "유미"
-		},
+		}
 	},
 	"teamB": {
 		"status": "LOSE",
@@ -45,6 +45,6 @@
 		"장하늘": {
 			"position": "mid",
 			"champion": "아리"
-		},
+		}
 	}
 }

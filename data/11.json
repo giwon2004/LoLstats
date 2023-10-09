@@ -22,7 +22,7 @@
 		"최선호": {
 			"position": "sup",
 			"champion": "탈론"
-		},
+		}
 	},
 	"teamB": {
 		"status": "WIN",
@@ -45,6 +45,6 @@
 		"최수현": {
 			"position": "sup",
 			"champion": "모르가나"
-		},
+		}
 	}
 }

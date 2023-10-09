@@ -22,7 +22,7 @@
 		"장하늘": {
 			"position": "mid",
 			"champion": "아리"
-		},
+		}
 	},
 	"teamB": {
 		"status": "LOSE",
@@ -45,6 +45,6 @@
 		"정유찬": {
 			"position": "mid",
 			"champion": "카시오페아"
-		},
+		}
 	}
 }

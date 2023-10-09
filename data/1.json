@@ -22,7 +22,7 @@
 		"정은비": {
 			"position": "sup",
 			"champion": "럭스"
-		},
+		}
 	},
 	"teamB": {
 		"status": "LOSE",
@@ -45,6 +45,6 @@
 		"최용호": {
 			"position": "bot",
 			"champion": "미스 포츈"
-		},
+		}
 	}
 }

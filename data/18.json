@@ -22,7 +22,7 @@
 		"송기원": {
 			"position": "bot",
 			"champion": "제리"
-		},
+		}
 	},
 	"teamB": {
 		"status": "LOSE",
@@ -45,6 +45,6 @@
 		"최선호": {
 			"position": "mid",
 			"champion": "신드라"
-		},
+		}
 	}
 }

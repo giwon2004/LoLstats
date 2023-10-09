@@ -22,7 +22,7 @@
 		"장하늘": {
 			"position": "mid",
 			"champion": "아리"
-		},
+		}
 	},
 	"teamB": {
 		"status": "WIN",
@@ -45,6 +45,6 @@
 		"송기원": {
 			"position": "bot",
 			"champion": "제리"
-		},
+		}
 	}
 }

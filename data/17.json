@@ -22,7 +22,7 @@
 		"송기원": {
 			"position": "bot",
 			"champion": "케이틀린"
-		},
+		}
 	},
 	"teamB": {
 		"status": "LOSE",
@@ -45,6 +45,6 @@
 		"장하늘": {
 			"position": "mid",
 			"champion": "니코"
-		},
+		}
 	}
 }

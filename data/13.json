@@ -22,7 +22,7 @@
 		"최선호": {
 			"position": "mid",
 			"champion": "사일러스"
-		},
+		}
 	},
 	"teamB": {
 		"status": "WIN",
@@ -45,6 +45,6 @@
 		"최수현": {
 			"position": "jgl",
 			"champion": "람머스"
-		},
+		}
 	}
 }

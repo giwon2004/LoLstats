@@ -14,7 +14,7 @@ f'''{tab}{tab}"{name}": {rb}
 {tab}{tab}{tab}"champion": "{champion}"
 {tab}{tab}{lb},
 '''
-    return json[:-1]
+    return json[:-2]
 
 teamA = []; teamB = []
 for row in range(15):

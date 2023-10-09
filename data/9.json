@@ -22,7 +22,7 @@
 		"정유찬": {
 			"position": "sup",
 			"champion": "니코"
-		},
+		}
 	},
 	"teamB": {
 		"status": "WIN",
@@ -45,6 +45,6 @@
 		"장하늘": {
 			"position": "mid",
 			"champion": "아리"
-		},
+		}
 	}
 }
