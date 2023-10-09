@@ -9,6 +9,7 @@ function read_file(num) {
 	xhr.send();
 
 	if (xhr.status === 200) {
+		console.log(xhr.responseText);
 		const jsonData = JSON.parse(xhr.responseText);
 		return jsonData;
 	} else {
@@ -70,30 +71,30 @@ function get_player_list() {
 }
 
 function make_list(data) {
-    var html = "<ul>";
-    var playerList = get_player_list(); // Replace with your actual function to get the player list
+	var html = "<ul>";
+	var playerList = get_player_list();
 
-    for (let name of playerList) {
-        pstat = player_statistics(name, data);
+	for (let name of playerList) {
+		pstat = player_statistics(name, data);
 
-        // Calculate winning probability as a percentage
-        const winPercentage = (pstat.win / pstat.total) * 100;
+		// Calculate winning probability as a percentage
+		const winPercentage = (pstat.win / pstat.total) * 100;
 
-        // Create a <progress> element for the progress bar
-        const progressBar = `
-            <progress value="${winPercentage}" max="100"></progress>
-        `;
+		// Create a <progress> element for the progress bar
+		const progressBar = `
+			<progress value="${pstat.win}" max="${pstat.total}}"></progress>
+		`;
 
-        html += `
-            <li>
-                <span>${name}: ${pstat.win} wins out of ${pstat.total}</span>
-                ${progressBar}
-            </li>
-        `;
-    }
+		html += `
+			<li>
+				<span>${name}: ${winPercentage}%</span>
+				${progressBar}
+			</li>
+		`;
+	}
 
-    html += "</ul>";
-    return html;
+	html += "</ul>";
+	return html;
 }
 
 var names = [];
