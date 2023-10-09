@@ -44,7 +44,7 @@ function player_statistics(name, data){
 		else if (name in content.teamB)
 			team = content.teamB;
 		else
-			return;
+			continue;
 		player = team[name];
 		if (!(player.champion in champion)) {
 			champion[player.champion] = {"win": 0, "lose": 0};
@@ -80,7 +80,6 @@ function make_list(data) {
 	var html = "<ul>";
 
 	for (let name in get_player_list()) {
-		console.log(name);
 		pstat = player_statistics(name, data);
 
 		// Calculate winning probability as a percentage
