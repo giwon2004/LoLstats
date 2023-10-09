@@ -6,14 +6,15 @@ function read_file(num) {
 
 	const xhr = new XMLHttpRequest();
 	xhr.open('GET', url, false); // Use synchronous request
-	xhr.send();
-
-	if (xhr.status === 200) {
-		const jsonData = JSON.parse(xhr.responseText);
+	try {
+		xhr.send();
+		if (xhr.status === 200) {
+			const jsonData = JSON.parse(xhr.responseText);
+		}
 		return jsonData;
-	} else {
-		console.error(`Error fetching ${num}.json: ${xhr.status} ${xhr.statusText}`);
-		return null; // Return null to indicate an error
+	}
+	catch {
+		return null; 
 	}
 }
 
@@ -71,8 +72,9 @@ function get_player_list() {
 function make_list(data) {
 	var html = "<ul>";
 	var playerList = get_player_list();
+	console.log(get_player_list);
 
-	for (let name of playerList) {
+	for (let name in playerList) {
 		pstat = player_statistics(name, data);
 
 		// Calculate winning probability as a percentage
