@@ -1,7 +1,7 @@
 window.onload = function(){
 
 function read_file(num) {
-	const response = fetch("https://giwon2004.github.io/LoLstats/data/${num}.json");
+	const response = fetch("https://giwon2004.github.io/LoLstats/data/" + num + ".json");
 	if (response.status === 200)
 		return response.json;
 	else
