@@ -93,7 +93,7 @@ function make_list(data) {
     var playerList = get_player_list();
 
 
-    for (let name of playerList) {
+    for (let name in playerList) {
         pstat = player_statistics(name, data);
 
 	    const progressBar = `<progress value="${pstat.win}" max="${pstat.total}"></progress>`;
