@@ -110,22 +110,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     ths.forEach(th => {
-        th.addEventListener("click", () => {
-            if (th !== currentSort.col) {
-                currentSort.col = th;
-                currentSort.dir = 1;
-            } else {
-                currentSort.dir *= -1;
-            }
-
-            sortTable(th);
-        });
-    });
+	    th.classList.remove("sorted", "desc"); // Remove both classes
+	    if (th !== currentSort.col) {
+	        currentSort.col = th;
+	        currentSort.dir = 1;
+	    } else {
+	        currentSort.dir *= -1;
+	        if (currentSort.dir === -1) {
+	            th.classList.add("desc"); // Add the "desc" class for descending sorting
+	        }
+	    }
+	    th.classList.add("sorted"); // Always add the "sorted" class
+	});
 });
 
 function make_list(data) {
     var html = `
-	<table>
+	<table class="sortable-table">
 		<thead>
 			<tr>
 				<th data-type="text">이름</th>
@@ -145,7 +146,7 @@ function make_list(data) {
 	    const progressBar = `<progress value="${pstat.win}" max="${pstat.total}"></progress>`;
 
         const winPercentage = pstat.total == 0 ? 0 : ((pstat.win / pstat.total) * 100);
-        const formattedPercentage = winPercentage === 100 ? winPercentage.toFixed(1) : winPercentage.toFixed(2);
+        const formattedPercentage = winPercentage === 100 ? winPercentage.toFixed(1) : winPercentage.toFixed(2).padStart(5, '0');
 
         html += `
 			<tr>

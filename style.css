@@ -1,0 +1,28 @@
+/* CSS to add a border to the table */
+.sortable-table {
+    border-collapse: collapse; /* Collapse border-spacing */
+    width: 100%; /* Ensure the table spans its container */
+}
+
+.sortable-table th,
+.sortable-table td {
+    border: 1px solid #ccc; /* Add a 1px solid gray border to table cells */
+    padding: 8px; /* Add some padding for cell content */
+    text-align: left; /* Align cell content to the left */
+}
+
+.sortable-table th {
+    background-color: #f2f2f2; /* Add a background color to table headers */
+    font-weight: bold; /* Make table headers bold */
+    cursor: pointer; /* Add a pointer cursor to indicate clickable headers */
+}
+
+.sortable-table th.sorted::before {
+    content: "▲"; /* Add an up arrow for ascending sorting */
+    float: right;
+    margin-left: 5px;
+}
+
+.sortable-table th.sorted.desc::before {
+    content: "▼"; /* Add a down arrow for descending sorting */
+}
