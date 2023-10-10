@@ -98,17 +98,16 @@ function make_list(data) {
 
     for (let name of playerList) {
         pstat = player_statistics(name, data);
-        if (pstat.total == 0) {
-        	pstat.total = 1;
-        }
-        const winPercentage = ((pstat.win / pstat.total) * 100).toFixed(2);
+
+        const winPercentage = pstat.total == 0 ? 0 : ((pstat.win / pstat.total) * 100);
+        const formattedPercentage = winPercentage === 100 ? winPercentage.toFixed(1) : winPercentage.toFixed(2);
 
         html += `
 			<tr>
 				<td>${name}</td>
 				<td>${pstat.win}</td>
 				<td>${pstat.lose}</td>
-				<td>${winPercentage}% ${progressBar}</td>
+				<td>${formattedPercentage}% ${progressBar}</td>
 			</tr>
 		`;
     }
@@ -119,30 +118,6 @@ function make_list(data) {
 	`;
 
     return html;
-}
-
-function make_list(data) {
-	var html = "<ul>";
-
-	for (let name in get_player_list()) {
-		pstat = player_statistics(name, data);
-
-		// Calculate winning probability as a percentage
-		const winPercentage = (pstat.win / pstat.total) * 100;
-
-		// Create a <progress> element for the progress bar
-		
-
-		html += `
-			<li>
-				<span>${name}: ${winPercentage}%</span>
-				${progressBar}
-			</li>
-		`;
-	}
-
-	html += "</ul>";
-	return html;
 }
 
 function updatePlayerDisplay() {
