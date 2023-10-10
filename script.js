@@ -6,13 +6,26 @@ function read_file(num) {
 
 	const xhr = new XMLHttpRequest();
 	xhr.open('GET', url, false); // Use synchronous request
-	xhr.send();
-	if (xhr.status === 200) {
-		const jsonData = JSON.parse(xhr.responseText);
-		return jsonData;
-	}
-	else {
-		return null; 
+
+	try {
+		xhr.send();
+
+		if (xhr.status === 200) {
+			const jsonData = JSON.parse(xhr.responseText);
+			return jsonData;
+		} else if (xhr.status === 404) {
+			// Handle the 404 error
+			console.error(`File ${num}.json not found.`);
+			return null;
+		} else {
+			// Handle other errors
+			console.error(`Error fetching ${num}.json. Status code: ${xhr.status}`);
+			return null;
+		}
+	} catch (error) {
+		// Handle any exceptions thrown by xhr.send()
+		console.error(`Error sending XMLHttpRequest: ${error.message}`);
+		return null;
 	}
 }
 
@@ -107,14 +120,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	ths.forEach(th => {
 		th.addEventListener("click", () => {
-			console.log("sorting by" + th);
-			th.classList.remove("asc", "desc");
+			console.log("sorting by " + th.textContent);
+			ths.forEach(otherTh => {
+				if (otherTh !== th) {
+					otherTh.classList.remove("asc", "desc");
+				}
+			});
 			if (th !== currentSort.col) {
 				currentSort.col = th;
 				currentSort.dir = 1;
 				th.classList.add("asc");
-				currentSort.col.remove("desc");
-				currentSort.col.add("asc");
 			} else {
 				currentSort.dir *= -1;
 				if (currentSort.dir === 1) {
