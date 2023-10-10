@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	ths.forEach(th => {
 		th.addEventListener("click", () => {
+			console.log("sorting by" + th);
 			th.classList.remove("asc", "desc");
 			if (th !== currentSort.col) {
 				currentSort.col = th;
@@ -125,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			sortTable(th);
 	    });
 	});
+	console.log("added clicker");
 
 	ths.forEach(th => th.classList.add("asc"));
 });
