@@ -93,12 +93,14 @@ function make_list(data) {
     var playerList = get_player_list();
 
     const progressBar = `
-			<progress value="${pstat.win}" max="${pstat.total}}"></progress>
+			<progress value="${pstat.win}" max="${pstat.total}"></progress>
 		`;
 
     for (let name of playerList) {
         pstat = player_statistics(name, data);
-
+        if (pstat.total == 0) {
+        	pstat.total = 1;
+        }
         const winPercentage = ((pstat.win / pstat.total) * 100).toFixed(2);
 
         html += `
