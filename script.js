@@ -1,32 +1,28 @@
 window.onload = function(){
 
-function read_file(num) {
+function read_file(num, callback) {
 	const baseURL = 'https://giwon2004.github.io/LoLstats/data/';
 	const url = `${baseURL}${num}.json`;
 
 	const xhr = new XMLHttpRequest();
-	xhr.open('GET', url, false); // Use synchronous request
+	xhr.open('GET', url, true); // Use asynchronous request
 
-	try {
-		xhr.send();
-
-		if (xhr.status === 200) {
-			const jsonData = JSON.parse(xhr.responseText);
-			return jsonData;
-		} else if (xhr.status === 404) {
-			// Handle the 404 error
-			console.error(`File ${num}.json not found.`);
-			return null;
-		} else {
-			// Handle other errors
-			console.error(`Error fetching ${num}.json. Status code: ${xhr.status}`);
-			return null;
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4) {
+			if (xhr.status === 200) {
+				const jsonData = JSON.parse(xhr.responseText);
+				callback(jsonData);
+			} else if (xhr.status === 404) {
+				// Handle the 404 error
+				callback(null);
+			} else {
+				// Handle other errors
+				callback(null);
+			}
 		}
-	} catch (error) {
-		// Handle any exceptions thrown by xhr.send()
-		console.error(`Error sending XMLHttpRequest: ${error.message}`);
-		return null;
-	}
+	};
+
+	xhr.send();
 }
 
 function read_data() {
@@ -34,14 +30,17 @@ function read_data() {
 	var res = {};
 	var data = {};
 	while (true) {
-		data = read_file(num);
-		if(data !== null)
-			res[num] = data;
-		else
+		read_file(num, data => {
+			if(data !== null)
+				res[num] = data;
+		});
+		if (res[num] === null) {
+			delete res[num];
 			break;
+		}
 		num++;
 	}
-	return {"data": res, "total": num-1};
+	return {"data": res, "total": num};
 }
 
 function player_statistics(name, data){
