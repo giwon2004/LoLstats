@@ -17,12 +17,12 @@
     cursor: pointer; /* Add a pointer cursor to indicate clickable headers */
 }
 
-.sortable-table th.sorted::before {
+.sortable-table th.asc::before {
     content: "▲"; /* Add an up arrow for ascending sorting */
     float: right;
     margin-left: 5px;
 }
 
-.sortable-table th.sorted.desc::before {
+.sortable-table th.desc::before {
     content: "▼"; /* Add a down arrow for descending sorting */
 }

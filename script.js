@@ -103,25 +103,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
         tbody.innerHTML = "";
         rows.forEach(row => tbody.appendChild(row));
-
-        // Update the sorting indicator
-        ths.forEach(th => th.classList.remove("sorted"));
-        col.classList.add("sorted");
     }
 
-    ths.forEach(th => {
-	    th.classList.remove("sorted", "desc"); // Remove both classes
-	    if (th !== currentSort.col) {
-	        currentSort.col = th;
-	        currentSort.dir = 1;
-	    } else {
-	        currentSort.dir *= -1;
-	        if (currentSort.dir === -1) {
-	            th.classList.add("desc"); // Add the "desc" class for descending sorting
-	        }
-	    }
-	    th.classList.add("sorted"); // Always add the "sorted" class
+	ths.forEach(th => {
+		th.addEventListener("click", () => {
+			th.classList.remove("asc", "desc");
+			if (th !== currentSort.col) {
+				currentSort.col = th;
+				currentSort.dir = 1;
+				th.classList.add("asc");
+				currentSort.col.remove("desc");
+				currentSort.col.add("asc");
+			} else {
+				currentSort.dir *= -1;
+				if (currentSort.dir === 1) {
+					th.classList.add("asc");
+				} else {
+					th.classList.add("desc");
+				}
+			}
+			sortTable(th);
+	    });
 	});
+
+	ths.forEach(th => th.classList.add("asc"));
 });
 
 function make_list(data) {
