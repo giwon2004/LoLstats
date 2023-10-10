@@ -76,22 +76,68 @@ function get_player_list() {
 	}
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const table = document.querySelector("table");
+    const tbody = table.querySelector("tbody");
+    const ths = table.querySelectorAll("th");
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+
+    let currentSort = {
+        col: undefined,
+        dir: 1
+    };
+
+    function sortTable(col) {
+        const dataType = col.getAttribute("data-type");
+
+        rows.sort((a, b) => {
+            const aValue = a.cells[col.cellIndex].textContent;
+            const bValue = b.cells[col.cellIndex].textContent;
+
+            if (dataType === "number") {
+                return currentSort.dir * (parseFloat(aValue) - parseFloat(bValue));
+            } else {
+                return currentSort.dir * aValue.localeCompare(bValue);
+            }
+        });
+
+        tbody.innerHTML = "";
+        rows.forEach(row => tbody.appendChild(row));
+
+        // Update the sorting indicator
+        ths.forEach(th => th.classList.remove("sorted"));
+        col.classList.add("sorted");
+    }
+
+    ths.forEach(th => {
+        th.addEventListener("click", () => {
+            if (th !== currentSort.col) {
+                currentSort.col = th;
+                currentSort.dir = 1;
+            } else {
+                currentSort.dir *= -1;
+            }
+
+            sortTable(th);
+        });
+    });
+});
+
 function make_list(data) {
     var html = `
 	<table>
 		<thead>
 			<tr>
-				<th>이름</th>
-				<th>승</th>
-				<th>패</th>
-				<th>승률</th>
+				<th data-type="text">이름</th>
+				<th data-type="number">승</th>
+				<th data-type="number">패</th>
+				<th data-type="number">승률</th>
 			</tr>
 		</thead>
 		<tbody>
 	`;
 
     var playerList = get_player_list();
-
 
     for (let name in playerList) {
         pstat = player_statistics(name, data);
