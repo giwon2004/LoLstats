@@ -1,0 +1,50 @@
+{
+	"date": "202310282222",
+	"length": "48:32",
+	"teamA": {
+		"status": "WIN",
+		"권우진": {
+			"position": "mid",
+			"champion": "사일러스"
+		},
+		"장하늘": {
+			"position": "jgl",
+			"champion": "세주아니"
+		},
+		"송기원": {
+			"position": "bot",
+			"champion": "제리"
+		},
+		"박시은": {
+			"position": "sup",
+			"champion": "유미"
+		},
+		"정재윤": {
+			"position": "top",
+			"champion": "가렌"
+		}
+	},
+	"teamB": {
+		"status": "LOSE",
+		"김민준": {
+			"position": "mid",
+			"champion": "아칼리"
+		},
+		"이상화": {
+			"position": "sup",
+			"champion": "라칸"
+		},
+		"양준서": {
+			"position": "top",
+			"champion": "말파이트"
+		},
+		"최용호": {
+			"position": "jgl",
+			"champion": "마스터 이"
+		},
+		"김예운": {
+			"position": "bot",
+			"champion": "이즈리얼"
+		}
+	}
+}
